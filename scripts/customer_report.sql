@@ -11,6 +11,7 @@ Customer Report
 		-total sales
 		-total products
 		-lifespan (in months)
+		-total profit
 	4. calculate valuable KPIs:
 		-recency (months since last order)
 		-average order value
@@ -31,12 +32,16 @@ with base_query as
 	f.order_date,
 	f.sales_amount,
 	f.quantity,
+	p.cost,
+	(f.sales_amount*f.quantity)-(p.cost*f.quantity) as profit,
 	c.customer_key,
 	CONCAT(c.first_name,' ',c.last_name) as customer_name,
 	DATEDIFF(year,birthdate,GETDATE()) as age
 	FROM gold.fact_sales f
 	LEFT JOIN gold.dim_customers c
 	ON c.customer_key = f.customer_key
+	LEFT JOIN gold.dim_products p
+	ON p.product_key = f.product_key
 	where order_date is not null
 ),
 customer_aggregation as
@@ -51,6 +56,7 @@ select
 	count(distinct order_number) as total_orders,
 	sum(quantity) as total_quantity,
 	sum(sales_amount) as total_sales,
+	sum(profit) as total_profit,
 	count(distinct product_key) as total_products,
 	datediff(month,min(order_date),max(order_date)) as lifespan,
 	min(order_date) first_order_date,
@@ -96,11 +102,10 @@ last_order_date,
 recency,
 total_orders,
 total_sales,
+total_profit,
 total_quantity,
 lifespan,
 average_order_value,
 average_monthly_spend
 from final_report
 
-select
-* from gold.customers_report
