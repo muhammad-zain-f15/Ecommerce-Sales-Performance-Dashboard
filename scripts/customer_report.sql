@@ -20,7 +20,6 @@ Customer Report
 */
 
 
-CREATE VIEW gold.customers_report AS
 with base_query as
 (
 /*
@@ -33,7 +32,7 @@ with base_query as
 	f.sales_amount,
 	f.quantity,
 	p.cost,
-	(f.sales_amount*f.quantity)-(p.cost*f.quantity) as profit,
+	(f.price*f.quantity)-(p.cost*f.quantity) as profit,
 	c.customer_key,
 	CONCAT(c.first_name,' ',c.last_name) as customer_name,
 	DATEDIFF(year,birthdate,GETDATE()) as age
@@ -83,11 +82,11 @@ SELECT
 	DATEDIFF(month,last_order_date,getdate()) recency,
 	case 
 		when total_orders = 0 then 0
-		else round((total_sales/total_orders),2)
+		else total_sales/total_orders
 	END average_order_value,
 	case 
-		when lifespan = 0 then 0
-		else round((total_sales/lifespan),2)
+		when lifespan = 0 then total_sales
+		else total_sales/lifespan
 	END average_monthly_spend
 
 	from customer_aggregation
@@ -108,4 +107,3 @@ lifespan,
 average_order_value,
 average_monthly_spend
 from final_report
-
