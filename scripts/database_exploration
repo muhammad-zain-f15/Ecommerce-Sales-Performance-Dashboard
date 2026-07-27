@@ -1,0 +1,8 @@
+-- Database Exploration
+SELECT
+*
+FROM INFORMATION_SCHEMA.TABLES
+
+-- COLUMNS exploration
+SELECT * FROM INFORMATION_SCHEMA.COLUMNS
+where TABLE_NAME = 'fact_sales';
