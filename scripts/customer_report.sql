@@ -19,7 +19,7 @@ Customer Report
 
 */
 
-
+create view customers_report as
 with base_query as
 (
 /*
