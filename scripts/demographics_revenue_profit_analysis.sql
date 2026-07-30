@@ -60,4 +60,25 @@ Targeted and more Personalized Marketing to highest sales and profit contributor
 increase revenue
 
 */
+-- Distribution of customers by country, gender and marital status
+with customer_distribution_cte as
+(
+	select
+	country,
+	gender,
+	marital_status,
+	round(cast(count(customer_key) as float)/ (select count(customer_key) from gold.dim_customers)*100,2) customer_distribution_per
+	FROM gold.dim_customers
+	group by country,gender,marital_status
+	
+)
+-- male and female distributions are fairly balanced across countries
+select 
+*,
+sum(customer_distribution_per)over (partition by country) as country_customer_distribution_per
+
+FROM customer_distribution_cte
+order by country
+
+
 
