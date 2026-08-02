@@ -5,11 +5,9 @@ I performed EDA to explore and understand the Ecommerce Sales Database. The data
 # Advanced SQL Analytics
 This time I move forward with Advance Analysis using SQL to perform time-series analysis, cumulative analysis, product performance analysis etc. I also designed a customer and product report, which consolidates key metrics and KPIs for each customer and product.
 # Power BI Dashboard
-<img src = "images/sales_analysis.png" alt = "Customer Analysis Dashboard">
-<br>
+<img src = "images/sales_analysis_v2.png" alt = "Sales Analysis Dashboard">
 
-<img src = "images/customer_analysis.png" alt = "Customer Analysis Dashboard">
-<br>
+<img src = "images/customer_analysis_v2.png" alt = "Customer Analysis Dashboard">
 
 <img src = "images/product_analysis.png" alt = "Product Analysis Dashboard">
 
