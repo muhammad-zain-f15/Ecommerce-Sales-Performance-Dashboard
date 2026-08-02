@@ -1,5 +1,7 @@
-# Ecommerce Sales 
-End-to-End Retail Analysis to uncover revenue trends, top selling products and customer behavior
+# Ecommerce Sales Data Analysis & Visualization 
+In this project, I did Data Analysis and Data Visualization on the Ecommerce Sales Data to extract insights and provide recommendations which for strategic decsion making.
+
+
 # EDA 
 I performed EDA to explore and understand the Ecommerce Sales Database. The database has two dimension tables and one fact table. I analyzed dimensions, measures and dates to understand overall business. I also highlighted the missing values in the database.
 # Advanced SQL Analytics
