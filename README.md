@@ -1,5 +1,5 @@
 # Ecommerce Sales Data Analysis & Visualization 
-In this project, I did Data Analysis and Data Visualization on the Ecommerce Sales Data to extract insights and provide recommendations which for strategic decsion making.
+In this project, I performed Data Analysis & Visualization on the Ecommerce Sales Data to extract insights and provide recommendations for strategic decsion making.
 
 
 # EDA 
