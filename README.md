@@ -1,6 +1,5 @@
-# Ecommerce Sales Data Analysis & Visualization 
-In this project, I performed Data Analysis & Visualization on the Ecommerce Sales Data to extract insights and provide recommendations for strategic decsion making.
-
+# Ecommerce Analytics Business Case
+The company experienced a decline in sales in 2012 after performing strongly in 2011, followed by a substantial recovery in 2013. However, it is unclear which products and markets contributed most to these changes. The business needs to identify the key drivers of declining and recovering sales to make better-informed product and market decisions.
 
 # EDA 
 I performed EDA to explore and understand the Ecommerce Sales Database. The database has two dimension tables and one fact table. I analyzed dimensions, measures and dates to understand overall business. I also highlighted the missing values in the database.
